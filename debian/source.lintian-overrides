@@ -1,0 +1,3 @@
+rabbitmq-server source: source-is-missing deps/rabbitmq_management/priv/www/js/help.js line length is 657 characters (>512)
+rabbitmq-server source: source-is-missing deps/rabbitmq_management/priv/www/js/jquery.flot.js line length is 2952 characters (>512)
+rabbitmq-server source: source-is-missing deps/rabbitmq_shovel_management/priv/www/js/shovel.js line length is 258 characters (>256)
