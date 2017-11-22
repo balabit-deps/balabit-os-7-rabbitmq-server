@@ -28,7 +28,6 @@ Architecture: all
 Depends: adduser,
          erlang-nox (>= 1:13.b.3) | esl-erlang,
          lsb-base,
-         logrotate,
          ${misc:Depends},
          ${python:Depends},
 Description: AMQP server written in Erlang
