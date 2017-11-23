@@ -30,7 +30,7 @@ cd /var/lib/rabbitmq
 SCRIPT=`basename $0`
 
 if [ `id -u` = `id -u rabbitmq` -a "$SCRIPT" = "rabbitmq-server" ] ; then
-    /usr/lib/rabbitmq/bin/rabbitmq-server "$@"  > "/var/log/rabbitmq/startup_log" 2> "/var/log/rabbitmq/startup_err"
+    /usr/lib/rabbitmq/bin/rabbitmq-server "$@"
 elif [ `id -u` = `id -u rabbitmq` -o "$SCRIPT" = "rabbitmq-plugins" ] ; then
     if [ -f $PWD/.erlang.cookie ] ; then
         export HOME=.
