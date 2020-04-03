@@ -1,3 +1,10 @@
+rabbitmq-server (3.6.10-1ubuntu0.1) bionic; urgency=medium
+
+  * Fix display of version when doing rabbitmqadmin --version using
+    backport of fix from Debian (LP: #1773324)
+
+ -- Dan Streetman <ddstreet@canonical.com>  Fri, 03 Apr 2020 08:04:11 -0400
+
 rabbitmq-server (3.6.10-1) unstable; urgency=medium
 
   * New upstream release (Closes: #863586), fixing multiple issues:
