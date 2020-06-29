@@ -18,6 +18,7 @@ USER=rabbitmq
 ROTATE_SUFFIX=
 INIT_LOG_DIR=/var/log/rabbitmq
 PID_FILE=/var/run/rabbitmq/pid
+RABBITMQ_STARTUP_TIMEOUT=600
 
 
 test -x $DAEMON || exit 0
@@ -54,7 +55,7 @@ start_rabbitmq () {
         RABBITMQ_PID_FILE=$PID_FILE start-stop-daemon --quiet \
             --chuid rabbitmq --start --exec $DAEMON \
             --pidfile "$RABBITMQ_PID_FILE" --background
-        $CONTROL wait $PID_FILE >/dev/null 2>&1
+        $CONTROL wait -t $RABBITMQ_STARTUP_TIMEOUT $PID_FILE >/dev/null 2>&1
         RETVAL=$?
         set -e
         if [ $RETVAL != 0 ] ; then

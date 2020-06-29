@@ -19,4 +19,4 @@
 # Non-empty defaults should be set in rabbitmq-env
 . `dirname $0`/rabbitmq-env
 
-/usr/lib/rabbitmq/bin/rabbitmqctl wait $RABBITMQ_PID_FILE
+/usr/lib/rabbitmq/bin/rabbitmqctl wait -t ${RABBITMQ_STARTUP_TIMEOUT:-600} $RABBITMQ_PID_FILE
