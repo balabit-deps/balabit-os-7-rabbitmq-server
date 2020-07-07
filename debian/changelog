@@ -1,3 +1,14 @@
+rabbitmq-server (3.6.10-1ubuntu0.4) bionic; urgency=medium
+
+  * Improve systemd service file in order to avoid a 90-second hang
+    when restarting rabbitmq-server. (LP: #1784757) (Closes #902136)
+    - d/rabbitmq-server.service: Make sure the service starts after
+      epmd.  Use "Type=notify" for the service.
+    - d/control: Depend on socat, which is needed for the communication
+      between rabbitmq-server and systemd when "Type=notify" is used.
+
+ -- Sergio Durigan Junior <sergio.durigan@canonical.com>  Tue, 07 Jul 2020 10:26:18 -0400
+
 rabbitmq-server (3.6.10-1ubuntu0.3) bionic; urgency=medium
 
   * d/rabbitmq-server.service:

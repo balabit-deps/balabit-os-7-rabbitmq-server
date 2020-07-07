@@ -29,6 +29,7 @@ Depends: adduser,
          erlang-nox (>= 1:13.b.3) | esl-erlang,
          lsb-base,
          logrotate,
+         socat,
          ${misc:Depends},
          ${python:Depends},
 Description: AMQP server written in Erlang
