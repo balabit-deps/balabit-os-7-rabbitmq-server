@@ -1,3 +1,14 @@
+rabbitmq-server (3.6.10-1ubuntu0.4) bionic; urgency=medium
+
+  * Improve systemd service file in order to avoid a 90-second hang
+    when restarting rabbitmq-server. (LP: #1784757) (Closes #902136)
+    - d/rabbitmq-server.service: Make sure the service starts after
+      epmd.  Use "Type=notify" for the service.
+    - d/control: Depend on socat, which is needed for the communication
+      between rabbitmq-server and systemd when "Type=notify" is used.
+
+ -- Sergio Durigan Junior <sergio.durigan@canonical.com>  Tue, 07 Jul 2020 10:26:18 -0400
+
 rabbitmq-server (3.6.10-1ubuntu0.3bb1) bionic; urgency=medium
 
   * Balabit patched version
@@ -212,7 +223,7 @@ rabbitmq-server (3.3.5-1) unstable; urgency=low
   * New upstream release:
     - Provides unminimized versions of all bundled Javascript
       libraries (Closes: #736781).
-  * d/control: Added Blair Hester to Uploaders, dropped Emile Joubert 
+  * d/control: Added Blair Hester to Uploaders, dropped Emile Joubert
     (thanks for all your work Emile!).
 
  -- Blair Hester <bhester@gopivotal.com>  Tue, 12 Aug 2014 11:47:14 +0100
@@ -418,7 +429,7 @@ rabbitmq-server (2.6.1-1) unstable; urgency=low
 
 rabbitmq-server (2.5.0-1) unstable; urgency=low
 
-  * New upstream release 
+  * New upstream release
 
  -- John Leuner <jewel@debian.org>  Thu, 16 Jun 2011 09:55:40 +0200
 
@@ -512,7 +523,7 @@ rabbitmq-server (1.5.5-3) unstable; urgency=low
 rabbitmq-server (1.5.5-2) unstable; urgency=low
 
   * Include updates to debian package by rabbit team:
-    - quiet log rotate 
+    - quiet log rotate
     - update build-depends and depends for new erlang packages
     - debian/watch file
     - add rabbitmq-script-wrapper
@@ -562,10 +573,10 @@ rabbitmq-server (1.5.0-4) unstable; urgency=low
 
   * Clarify and explicitly list the license and copyright for
     codegen/amqp-0.8.json
-	
+
   * Explicitly list the authors and copyright for the rest of the codebase
     at the top of debian/copyright
-	
+
   * Clarify the copyright of the files in src/tcp_* . The rabbitmq authors have
     confirmed that they are the original authors of this code and that the
     files at http://code.google.com/p/cacherl/ were taken without their
