@@ -1,3 +1,9 @@
+rabbitmq-server (3.6.10-1ubuntu0.4bb1) bionic; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Mon, 02 Nov 2020 12:23:05 +0100
+
 rabbitmq-server (3.6.10-1ubuntu0.4) bionic; urgency=medium
 
   * Improve systemd service file in order to avoid a 90-second hang
